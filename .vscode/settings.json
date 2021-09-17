@@ -1,0 +1,35 @@
+{
+	"editor.tabSize": 4,
+	"editor.insertSpaces": false,
+	"editor.codeActionsOnSave": {
+		"source.fixAll.eslint": true
+	},
+	"eslint.validate": [
+		"javascript"
+	],
+	"[javascript]": {
+		"editor.formatOnSave": true,
+		"editor.codeActionsOnSave": {
+			"source.organizeImports": false,
+		},
+	},
+	"[javascriptreact]": {
+		"editor.formatOnSave": true,
+		"editor.codeActionsOnSave": {
+			"source.organizeImports": false,
+		},
+	},
+	"[typescriptreact]": {
+		"editor.formatOnSave": true,
+		"editor.codeActionsOnSave": {
+			"source.organizeImports": false,
+		},
+	},
+	"editor.formatOnSave": true,
+	"[typescript]": {
+		"editor.formatOnSave": true,
+		"editor.codeActionsOnSave": {
+			"source.organizeImports": false,
+		},
+	}
+}
