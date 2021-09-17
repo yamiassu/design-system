@@ -46,6 +46,7 @@ const theme = createStitches({
 	},
 })
 
+export const createTheme = theme.createTheme
 export const globalCss = theme.globalCss
 export const styled = theme.styled
 export default theme

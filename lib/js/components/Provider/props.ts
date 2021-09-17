@@ -1,8 +1,8 @@
 // Component
-import theme from "../../../theme"
+import { createTheme} from "../../../theme"
 
 export default interface PropsInterfaces {
 	children: JSX.Element | JSX.Element[] | string | null;
 
-	theme?: Partial<typeof theme>;
+	theme?: Parameters<typeof createTheme>[0];
 }

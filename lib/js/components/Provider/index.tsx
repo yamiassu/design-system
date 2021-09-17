@@ -2,6 +2,7 @@
 import Props from "./props"
 
 // Theme
+import { createTheme } from "../../../theme"
 import globalStyles from "../../../theme/globals"
 
 export default function Provider(props: Props) {
@@ -12,6 +13,6 @@ export default function Provider(props: Props) {
 	// -------------------------------------------------
 
 	return (
-		<>{props.children}</>
+		<div class={props.theme && createTheme(props.theme)}>{props.children}</div>
 	)
 }
