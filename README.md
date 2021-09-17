@@ -1,0 +1,12 @@
+## To do
+- [x] Theme (globals)
+- [x] Theme (responsivity)
+- [x] Theme (container)
+- [ ] Theme (colors)
+- [x] Grid (container)
+- [x] Grid (col)
+- [x] Grid (offset)
+- [x] Grid (padding)
+- [x] Grid (margin)
+- [ ] Grid (background)
+- [ ] Grid (color)

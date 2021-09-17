@@ -24,13 +24,13 @@ const offset = perColumn((index, total) => ({marginLeft: `${index / total * 100}
 // Padding settings
 // -------------------------------------------------
 
-const p = perDirection((dirs, index) => dirs.reduce((prev, curr) => ({...prev, [`padding-${curr}`]: index * 12}), {})) as PerDirectionType
+const p = perDirection((dirs, index) => dirs.reduce((prev, curr) => ({...prev, [`padding-${curr}`]: `calc(${index} * $padding)`}), {})) as PerDirectionType
 
 // -------------------------------------------------
 // Margin settings
 // -------------------------------------------------
 
-const m = perDirection((dirs, index) => dirs.reduce((prev, curr) => ({...prev, [`margin-${curr}`]: index * 12}), {})) as PerDirectionType
+const m = perDirection((dirs, index) => dirs.reduce((prev, curr) => ({...prev, [`margin-${curr}`]: `calc(${index} * $margin)`}), {})) as PerDirectionType
 
 // -------------------------------------------------
 // Component
@@ -73,13 +73,13 @@ const Grid = styled("div", {
 		},
 		container: {
 			true: {
-				"@initial": { width: "100%", margin: "auto" },
-				"@xs": { width: "100%", margin: "auto" },
-				"@sm": { width: 540, margin: "auto" },
-				"@md": { width: 720, margin: "auto" },
-				"@lg": { width: 960, margin: "auto" },
-				"@xl": { width: 1140, margin: "auto" },
-				"@xxl": { width: 1320, margin: "auto" },
+				"@initial": { width: "$containerXS", margin: "auto" },
+				"@xs": { width: "$containerXS", margin: "auto" },
+				"@sm": { width: "$containerSM", margin: "auto" },
+				"@md": { width: "$containerMD", margin: "auto" },
+				"@lg": { width: "$containerLG", margin: "auto" },
+				"@xl": { width: "$containerXL", margin: "auto" },
+				"@xxl": { width: "$containerXXL", margin: "auto" },
 			},
 		},
 	},

@@ -16,6 +16,20 @@ const theme = createStitches({
 			danger: "",
 			success: "",
 		},
+
+		sizes: {
+			containerXS: "100%",
+			containerSM: 540,
+			containerMD: 720,
+			containerLG: 960,
+			containerXL: 1140,
+			containerXXL: 1320,
+		},
+
+		space: {
+			margin: 12,
+			padding: 12,
+		},
 	},
 
 	// -------------------------------------------------
