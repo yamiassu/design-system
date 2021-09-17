@@ -10,25 +10,25 @@ const theme = createStitches({
 		colors: {
 			primary: "#8033bc",
 			secondary: "#92cb0d",
-			dark: "",
-			light: "",
-			warning: "",
-			danger: "",
-			success: "",
+			dark: "#121313",
+			light: "#f9f9f9",
+			warning: "#f6e83e",
+			danger: "#cc2524",
+			success: "#698e08",
 		},
 
 		sizes: {
 			containerXS: "100%",
-			containerSM: 540,
-			containerMD: 720,
-			containerLG: 960,
-			containerXL: 1140,
-			containerXXL: 1320,
+			containerSM: "540px",
+			containerMD: "720px",
+			containerLG: "960px",
+			containerXL: "1140px",
+			containerXXL: "1320px",
 		},
 
 		space: {
-			margin: 12,
-			padding: 12,
+			margin: "12px",
+			padding: "12px",
 		},
 	},
 

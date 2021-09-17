@@ -16,7 +16,7 @@ export const getColumns = (nullable = true) => Array.from(Array(12 + (nullable ?
  * @returns
  */
 export const getDirections = () => ({
-	"": ["top", "left", "bottom", "right"],
+	"": [""],
 	t: ["top"],
 	b: ["bottom"],
 	l: ["left"],

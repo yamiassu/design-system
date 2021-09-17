@@ -2,6 +2,7 @@
 import { styled } from "../../../theme"
 
 // Utils
+import { getColors, getBackgrounds } from "../../utils/color"
 import { perColumn, perDirection } from "../../utils/layout"
 
 // Types
@@ -24,13 +25,13 @@ const offset = perColumn((index, total) => ({marginLeft: `${index / total * 100}
 // Padding settings
 // -------------------------------------------------
 
-const p = perDirection((dirs, index) => dirs.reduce((prev, curr) => ({...prev, [`padding-${curr}`]: `calc(${index} * $padding)`}), {})) as PerDirectionType
+const p = perDirection((dirs, index) => dirs.reduce((prev, curr) => ({...prev, [`padding${curr === "" ? "":"-"}${curr}`]: `calc(${index} * $padding)`}), {})) as PerDirectionType
 
 // -------------------------------------------------
 // Margin settings
 // -------------------------------------------------
 
-const m = perDirection((dirs, index) => dirs.reduce((prev, curr) => ({...prev, [`margin-${curr}`]: `calc(${index} * $margin)`}), {})) as PerDirectionType
+const m = perDirection((dirs, index) => dirs.reduce((prev, curr) => ({...prev, [`margin${curr === "" ? "":"-"}${curr}`]: `calc(${index} * $margin)`}), {})) as PerDirectionType
 
 // -------------------------------------------------
 // Component
@@ -49,8 +50,18 @@ const Grid = styled("div", {
 			"a": {margin: "auto"},
 		},
 		p,
-		col,
+		col: {
+			...col,
+			auto: { width: "auto" },
+			fill: { width: "100%" },
+		},
 		offset,
+		color: getColors(),
+		background: getBackgrounds(),
+		direction: {
+			column: { flexDirection: "column" },
+			row: { flexDirection: "row" },
+		},
 		content: {
 			left: {
 				justifyContent: "left",
