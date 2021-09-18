@@ -18,17 +18,25 @@ const theme = createStitches({
 		},
 
 		sizes: {
+			// container
 			containerXS: "100%",
 			containerSM: "540px",
 			containerMD: "720px",
 			containerLG: "960px",
 			containerXL: "1140px",
 			containerXXL: "1320px",
+
+			// general
+			borderWidth: "2px",
 		},
 
 		space: {
 			margin: "12px",
 			padding: "12px",
+		},
+
+		radii: {
+			radius: "4px",
 		},
 	},
 
@@ -46,7 +54,8 @@ const theme = createStitches({
 	},
 })
 
-export const createTheme = theme.createTheme
-export const globalCss = theme.globalCss
+export const css = theme.css
 export const styled = theme.styled
+export const globalCss = theme.globalCss
+export const createTheme = theme.createTheme
 export default theme

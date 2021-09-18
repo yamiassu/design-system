@@ -6,3 +6,5 @@ export const getColorable = (cb: ((color: string) => Record<string, string>)) =>
 export const getColors = () => getColorable(color => ({color: `$${color}`})) as ColorMapping
 
 export const getBackgrounds = () => getColorable(color => ({backgroundColor: `$${color}`})) as ColorMapping
+
+export const getBorders = () => getColorable(color => ({borderColor: `$${color}`})) as ColorMapping

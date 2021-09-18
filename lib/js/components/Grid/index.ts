@@ -38,9 +38,6 @@ const m = perDirection((dirs, index) => dirs.reduce((prev, curr) => ({...prev, [
 // -------------------------------------------------
 
 const Grid = styled("div", {
-	// default styling
-	display: "flex",
-
 	// variancy
 	variants: {
 		m: {
@@ -59,26 +56,32 @@ const Grid = styled("div", {
 		color: getColors(),
 		background: getBackgrounds(),
 		direction: {
-			column: { flexDirection: "column" },
-			row: { flexDirection: "row" },
+			column: { flexDirection: "column", display: "flex" },
+			row: { flexDirection: "row", display: "flex" },
 		},
 		content: {
 			left: {
+				display: "flex",
 				justifyContent: "left",
 			},
 			right: {
+				display: "flex",
 				justifyContent: "right",
 			},
 			center: {
+				display: "flex",
 				justifyContent: "center",
 			},
 			around: {
+				display: "flex",
 				justifyContent: "space-around",
 			},
 			between: {
+				display: "flex",
 				justifyContent: "space-between",
 			},
 			evenly: {
+				display: "flex",
 				justifyContent: "space-evenly",
 			},
 		},
