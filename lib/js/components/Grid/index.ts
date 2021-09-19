@@ -52,6 +52,13 @@ const Grid = styled("div", {
 			auto: { width: "auto" },
 			fill: { width: "100%" },
 		},
+		fill: {
+			true: {
+				width: "100%",
+				dislay: "flex",
+				flexDirection: "column",
+			},
+		},
 		offset,
 		color: getColors(),
 		background: getBackgrounds(),

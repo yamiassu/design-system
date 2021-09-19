@@ -3,7 +3,13 @@ import { createStitches } from "@stitches/react"
 
 const theme = createStitches({
 	// -------------------------------------------------
-	// Color
+	// Color table
+	// -------------------------------------------------
+	//
+	// Responsible for handling color references to be
+	// used inside of our scope. Does not contain a
+	// direct link to any component.
+	//
 	// -------------------------------------------------
 
 	theme: {
@@ -15,6 +21,7 @@ const theme = createStitches({
 			warning: "#f6e83e",
 			danger: "#cc2524",
 			success: "#698e08",
+			info: "#315CA6",
 		},
 
 		sizes: {
@@ -51,6 +58,30 @@ const theme = createStitches({
 		lg: "(min-width: 992px) and (max-width: 1200px)",
 		xl: "(min-width: 1200px) and (max-width: 1400px)",
 		xxl: "(min-width: 1400px)",
+	},
+
+	// -------------------------------------------------
+	// Utils
+	// -------------------------------------------------
+	//
+	// Control the high constrast color that should
+	// be used with a certain background
+	//
+	// -------------------------------------------------
+
+	utils: {
+		colorFromBg: (value: string) => ({
+			color: `$${{
+				primary: "light",
+				secondary: "dark",
+				dark: "light",
+				light: "dark",
+				warning: "dark",
+				danger: "light",
+				success: "light",
+				info: "light",
+			}[value] || "dark"}`,
+		}),
 	},
 })
 

@@ -8,13 +8,23 @@ export const buttonCss = css({
 	// default styling
 	borderRadius: "$radius",
 	border: "transparent",
-	padding: "calc($padding / 2) $padding",
+	padding: "$padding calc($padding * 2)",
+	transition: "box-shadow .2s ease",
+	fontWeight: "bold",
 
 	"& + button": {
 		marginLeft: "$margin",
 	},
 
+	"&:hover": {
+		cursor: "pointer",
+		boxShadow: "0 0 4px 1px $colors$dark",
+	},
+
 	variants: {
+		/**
+		 * Font color
+		 */
 		color: getColors(),
 		background: getBackgrounds(),
 		disabled: {

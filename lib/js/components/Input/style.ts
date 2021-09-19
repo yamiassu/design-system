@@ -30,6 +30,9 @@ export const inputCss = css({
 export const containerCss = css({
 	// default styling
 	width: "100%",
+	display: "flex",
+	flexDirection: "column",
+
 	"& > :is(input,label)": {
 		width: "100%",
 	},

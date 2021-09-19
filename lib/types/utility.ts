@@ -1,8 +1,11 @@
+// Theme
+import theme from "../theme"
+
 // Reference data
 export type ColumnTypes = "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" | "10" | "11" | "12"
 export type DirectionsTypes = "l" | "r" | "t" | "b" | "x" | "y"
 export type DirectionsLength = "0" | "1" | "2" | "3" | "4" | "5"
-export type ColorTypes = "primary" | "secondary" | "dark" | "light" | "warning" | "danger" | "success"
+export type ColorTypes = keyof typeof theme["config"]["theme"]["colors"]
 
 // Utility types
 export type ColorMapping<Content = any> = Record<ColorTypes, Content>
