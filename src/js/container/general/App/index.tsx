@@ -1,8 +1,9 @@
 // Packages
-import { ThemeProvider } from "@lib"
+import { Theme } from "@lib"
 
 // Playgrounds
 import ButtonDocumentation from "../../../views/components/Button"
+import TooltipDocumentation from "../../../views/components/Tooltip"
 
 export function App() {
 	// -------------------------------------------------
@@ -10,8 +11,9 @@ export function App() {
 	// -------------------------------------------------
 
 	return (
-		<ThemeProvider>
+		<Theme>
 			<ButtonDocumentation />
-		</ThemeProvider>
+			<TooltipDocumentation />
+		</Theme>
 	)
 }

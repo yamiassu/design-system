@@ -1,3 +1,6 @@
+// Interfaces
+import type PlaygroundDescriptor from "../../../types/playgroundDescriptor"
+
 export default interface PropsInterface {
 	/**
 	 * Render description inline
@@ -12,10 +15,7 @@ export default interface PropsInterface {
 	/**
 	 * Props descriptors
 	 */
-	props: Record<string, {
-		type?: "text" | "number";
-		description?: string;
-	}>;
+	props: Record<string, PlaygroundDescriptor>;
 
 	/**
 	 * Default value for the props

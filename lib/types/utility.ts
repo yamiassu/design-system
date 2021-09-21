@@ -2,6 +2,7 @@
 import theme from "../theme"
 
 // Reference data
+export type IncreaseSizes = "1" | "2" | "3" | "4" | "5" | "6"
 export type ColumnTypes = "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" | "10" | "11" | "12"
 export type DirectionsTypes = "l" | "r" | "t" | "b" | "x" | "y"
 export type DirectionsLength = "0" | "1" | "2" | "3" | "4" | "5"

@@ -22,6 +22,7 @@ const theme = createStitches({
 			danger: "#cc2524",
 			success: "#698e08",
 			info: "#315CA6",
+			transparent: "transparent",
 		},
 
 		sizes: {
@@ -35,6 +36,11 @@ const theme = createStitches({
 
 			// general
 			borderWidth: "2px",
+		},
+
+		references: {
+			color: "$colors$light",
+			background: "$colors$dark",
 		},
 
 		space: {

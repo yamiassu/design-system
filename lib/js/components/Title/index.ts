@@ -1,8 +1,21 @@
 // Theme
 import { styled } from "../../../theme"
 
-const Title = styled("h1", {
+// Utils
+import { invertedTextSize } from "../../utils/typography"
 
+// -------------------------------------------------
+// Components
+// -------------------------------------------------
+
+const Title = styled("h1", {
+	variants: {
+		size: invertedTextSize,
+	},
+
+	defaultVariants: {
+		size: "1",
+	},
 })
 
 export default Title

@@ -1,5 +1,5 @@
 // Packages
-import { Button } from "@lib"
+import { Tooltip } from "@lib"
 
 // Components
 import Playground from "../../../components/Playground"
@@ -8,11 +8,11 @@ import Playground from "../../../components/Playground"
 import playgroundProps from "./playgroundProps"
 import buttonPlayGroundDefaultProps from "./defaultProps"
 
-export default function ButtonPlayground() {
+export default function TooltipPlayground() {
 	return (
 		<Playground
 			minimal
-			component={Button}
+			component={Tooltip}
 			props={playgroundProps}
 			defaultProps={buttonPlayGroundDefaultProps}
 		/>

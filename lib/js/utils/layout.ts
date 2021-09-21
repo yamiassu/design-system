@@ -1,3 +1,7 @@
+
+// Types
+import type { PerDirectionType } from "../../types/utility"
+
 /**
  * ### getColums
  *
@@ -15,7 +19,7 @@ export const getColumns = (nullable = true) => Array.from(Array(12 + (nullable ?
  *
  * @returns
  */
-export const getDirections = () => ({
+export const directions = ({
 	"": [""],
 	t: ["top"],
 	b: ["bottom"],
@@ -30,7 +34,7 @@ export const getDirections = () => ({
  *
  * @returns Array with length of directions
  */
-export const getDirectionsLength = () => Array.from(Array(5))
+export const directionsLength = Array.from(Array(5))
 
 /**
  * ### perColumn
@@ -56,17 +60,27 @@ export const perColumn = (cb: ((index: number, total: number) => Record<string, 
  * @param {Function} cb Callback to define variant object
  * @returns Row for insert into variant
  */
-export const perDirection = (cb: ((directions: string[], index: number) => Record<string, string | number>)) => {
-	const directions = getDirections()
-	const length = getDirectionsLength()
+export const perDirection = (cb: ((directions: string[], index: number) => Record<string, string | number>)) => Object
+	.keys(directions)
+	.map(key => [key, (directions as any)[key]] as const)
+	.reduce((prev, curr) =>
+		directionsLength.reduce((prev, _, index) => ({
+			...prev,
+			[`${curr[0]}${curr[0] !== "" ? "-":""}${index}`]: cb(curr[1], index),
+		}), prev)
+	, {})
 
-	return Object
-		.keys(directions)
-		.map(key => [key, (directions as any)[key]] as const)
-		.reduce((prev, curr) =>
-			length.reduce((prev, _, index) => ({
-				...prev,
-				[`${curr[0]}${curr[0] !== "" ? "-":""}${index}`]: cb(curr[1], index),
-			}), prev)
-		, {})
-}
+
+/**
+ * ### padding
+ *
+ * Generate default padding sizes and variants
+ */
+export const padding = perDirection((dirs, index) => dirs.reduce((prev, curr) => ({...prev, [`padding${curr === "" ? "":"-"}${curr}`]: `calc(${index} * $padding)`}), {})) as PerDirectionType
+
+/**
+ * ### margin
+ *
+ * Generate default margin sizes and variants
+ */
+export const margin = perDirection((dirs, index) => dirs.reduce((prev, curr) => ({...prev, [`margin${curr === "" ? "":"-"}${curr}`]: `calc(${index} * $margin)`}), {})) as PerDirectionType

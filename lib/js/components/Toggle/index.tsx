@@ -8,7 +8,7 @@ import useField from "../../hooks/useField"
 // Utils
 import { wrapUtils } from "../../utils/form"
 
-export default function Input(props: Props) {
+export default function Toggle(props: Props) {
 	// -------------------------------------------------
 	// Properties
 	// -------------------------------------------------
@@ -22,8 +22,9 @@ export default function Input(props: Props) {
 
 	return wrapUtils(props)(
 		<input
-			value={value}
-			onChange={setValue}
+			type="checkbox"
+			checked={value}
+			onChange={() => setValue(!value)}
 			name={props.name}
 			class={inputCss(props)}
 			placeholder={props.placeholder}

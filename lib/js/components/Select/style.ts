@@ -4,13 +4,20 @@ import { css } from "../../../theme"
 // Utils
 import { colors, bgColors, borderColors } from "../../utils/color"
 
-export const inputCss = css({
+export const selectCss = css({
 	// default styling
 	borderRadius: "$radius",
 	border: "$sizes$borderWidth solid transparent",
 	padding: "calc($padding / 2) $padding",
-	backgroundColor: "transparent",
+	backgroundColor: "$references$background",
 	marginTop: "$margin",
+	appearance: "button",
+	userSelect: "none",
+
+	"> option": {
+		color: "$references$color",
+		background: "$references$background",
+	},
 
 	variants: {
 		color: colors,

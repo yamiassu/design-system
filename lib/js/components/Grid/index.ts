@@ -2,16 +2,15 @@
 import { styled } from "../../../theme"
 
 // Utils
-import { getColors, getBackgrounds } from "../../utils/color"
-import { perColumn, perDirection } from "../../utils/layout"
+import { colors, bgColors } from "../../utils/color"
+import { perColumn, padding, margin } from "../../utils/layout"
 
 // Types
-import type { PerColumnType, PerDirectionType } from "../../../types/utility"
+import type { PerColumnType } from "../../../types/utility"
 
 // -------------------------------------------------
 // Column settings
 // -------------------------------------------------
-
 
 const col = perColumn((index, total) => ({width: `${index / total * 100}%`}), false) as PerColumnType
 
@@ -22,18 +21,6 @@ const col = perColumn((index, total) => ({width: `${index / total * 100}%`}), fa
 const offset = perColumn((index, total) => ({marginLeft: `${index / total * 100}%`})) as PerColumnType<true>
 
 // -------------------------------------------------
-// Padding settings
-// -------------------------------------------------
-
-const p = perDirection((dirs, index) => dirs.reduce((prev, curr) => ({...prev, [`padding${curr === "" ? "":"-"}${curr}`]: `calc(${index} * $padding)`}), {})) as PerDirectionType
-
-// -------------------------------------------------
-// Margin settings
-// -------------------------------------------------
-
-const m = perDirection((dirs, index) => dirs.reduce((prev, curr) => ({...prev, [`margin${curr === "" ? "":"-"}${curr}`]: `calc(${index} * $margin)`}), {})) as PerDirectionType
-
-// -------------------------------------------------
 // Component
 // -------------------------------------------------
 
@@ -41,12 +28,12 @@ const Grid = styled("div", {
 	// variancy
 	variants: {
 		m: {
-			...m,
+			...margin,
 			"l-a": {marginLeft: "auto"},
 			"r-a": {marginRight: "auto"},
 			"a": {margin: "auto"},
 		},
-		p,
+		p: padding,
 		col: {
 			...col,
 			auto: { width: "auto" },
@@ -60,13 +47,13 @@ const Grid = styled("div", {
 			},
 		},
 		offset,
-		color: getColors(),
-		background: getBackgrounds(),
+		color: colors,
+		background: bgColors,
 		direction: {
 			column: { flexDirection: "column", display: "flex" },
 			row: { flexDirection: "row", display: "flex" },
 		},
-		content: {
+		horizontal: {
 			left: {
 				display: "flex",
 				justifyContent: "left",
@@ -90,6 +77,24 @@ const Grid = styled("div", {
 			evenly: {
 				display: "flex",
 				justifyContent: "space-evenly",
+			},
+		},
+		vertical: {
+			top: {
+				display: "flex",
+				alignItems: "start",
+			},
+			bottom: {
+				display: "flex",
+				alignItems: "end",
+			},
+			center: {
+				display: "flex",
+				alignItems: "center",
+			},
+			fill: {
+				display: "flex",
+				alignItems: "stretch",
 			},
 		},
 		container: {
