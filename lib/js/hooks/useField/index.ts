@@ -17,15 +17,15 @@ export default function useField (props: Props) {
 	// Properties
 	// -------------------------------------------------
 
-	// states
-	const [value, setValue] = useState()
-
 	// contexts
 	const { form, updateForm, updateErrors, errors } = useContext(FormContext)
 	const context = useContext(GroupContext)
 
 	// constants
 	const position = context ? (context + "." + props.name):props.name
+
+	// states
+	const [value, setValue] = useState(dig(form, position || ""))
 
 	// -------------------------------------------------
 	// Effects

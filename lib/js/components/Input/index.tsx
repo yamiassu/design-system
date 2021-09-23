@@ -23,9 +23,10 @@ export default function Input(props: Props) {
 	return wrapUtils(props)(
 		<input
 			value={value}
-			onChange={setValue}
 			name={props.name}
+			onChange={setValue}
 			class={inputCss(props)}
+			disabled={props.disabled}
 			placeholder={props.placeholder}
 		/>,
 	)

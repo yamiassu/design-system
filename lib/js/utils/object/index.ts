@@ -20,7 +20,7 @@ export function dig (obj : Record<string, any>, path : string, value? : any) : R
 	}
 }
 
-export function remove (object: Record<string, any>, fields: string[]) {
+export function omit (object: Record<string, any>, fields: string[]) {
 	return Object
 		.keys(object)
 		.filter(i => !fields.includes(i))

@@ -9,6 +9,7 @@ export default interface PropsInterface extends VariantProps<typeof inputCss> {
 	name: string;
 
 	// optional
+	required?: boolean;
 	tooltip?: any;
 	label?: string | JSX.Element | JSX.Element[];
 	placeholder?: string;

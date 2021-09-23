@@ -2,7 +2,7 @@
 import { useState, useEffect, useCallback } from "preact/hooks"
 
 // Helpers
-import { dig, remove } from "../../utils/object"
+import { dig, omit } from "../../utils/object"
 
 // Contexts
 import FormContext from "../../contexts/form"
@@ -134,7 +134,7 @@ export default function Form(props: Props) {
 	// -------------------------------------------------
 
 	// extract internal props
-	const htmlprops = remove(props, ["file", "onChange", "onSubmit", "children", "data", "initialData", "onError"])
+	const htmlprops = omit(props, ["file", "onChange", "onSubmit", "children", "data", "initialData", "onError"])
 
 	return (
 		<FormContext.Provider

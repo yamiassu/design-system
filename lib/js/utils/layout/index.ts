@@ -1,6 +1,6 @@
 
 // Types
-import type { PerDirectionType } from "../../types/utility"
+import type { PerDirectionType } from "../../../types/utility"
 
 /**
  * ### getColums

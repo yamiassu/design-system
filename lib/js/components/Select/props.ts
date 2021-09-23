@@ -11,6 +11,7 @@ export default interface PropsInterface extends VariantProps<typeof selectCss> {
 	children?: JSX.Element[];
 
 	// optional
+	required?: boolean;
 	tooltip?: any;
 	label?: string | JSX.Element | JSX.Element[];
 	placeholder?: string;

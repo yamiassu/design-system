@@ -1,6 +1,6 @@
-const buttonPlayGroundDefaultProps = {
+const tooltipPlayGroundDefaultProps = {
 	content: "Gooday",
 	children: "Hover me",
 }
 
-export default buttonPlayGroundDefaultProps
+export default tooltipPlayGroundDefaultProps

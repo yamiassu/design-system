@@ -15,3 +15,4 @@ export { createTheme } from "./theme"
 export { default as theme } from "./theme"
 
 // Utils
+export * as utils from "./js/utils"

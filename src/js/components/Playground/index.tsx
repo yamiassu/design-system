@@ -1,5 +1,5 @@
 // Packages
-import { Grid, Input, Text, Form, Toggle, Select, Title, Theme } from "@lib"
+import { Grid, Input, Text, Form, Toggle, Select, Title } from "@lib"
 import { createElement } from "preact"
 import { useEffect, useMemo, useState } from "preact/hooks"
 
@@ -36,15 +36,20 @@ export default function Playground(props: PropsInterface) {
 
 				// select field
 				if (prop.type === "select") {
-					return [<Select tooltip={prop.description} label={key} name={key} options={prop.options} />, prop] as const
+					return [<Select required={prop.required} tooltip={prop.description} label={key} name={key} options={prop.options} />, prop] as const
 				}
 
 				// toggle field
 				if (prop.type === "boolean") {
-					return [<Toggle tooltip={prop.description} label={key} name={key} />, prop] as const
+					return [<Toggle required={prop.required} tooltip={prop.description} label={key} name={key} />, prop] as const
 				}
 
-				return [<Input tooltip={prop.description} label={key} name={key} />, prop] as const
+				// don't allow edition
+				if (prop.type === "unavailable") {
+					return [<Input required={prop.required} disabled tooltip={prop.description} label={key} name={key} />, prop] as const
+				}
+
+				return [<Input required={prop.required} tooltip={prop.description} label={key} name={key} />, prop] as const
 			})
 			// wrap controller with structure
 			.map(controller => {
@@ -67,16 +72,14 @@ export default function Playground(props: PropsInterface) {
 
 	return (
 		<Grid direction="row" fill>
-			<Grid col="6" css={{ height: 300, overflow: "auto" }}>
+			<Grid col="4" css={{ height: "70vh", overflow: "auto" }}>
 				<Form data={[componentProps, setComponentProps]}>
 					{controls}
 				</Form>
 			</Grid>
-			<Grid col="6" vertical="fill">
+			<Grid col="8" vertical="fill">
 				<Grid fill horizontal="center" vertical="center" css={{ overflow: "hidden" }}>
-					<div>
-						{createElement(props.component, componentProps)}
-					</div>
+					{createElement(props.component, componentProps)}
 				</Grid>
 			</Grid>
 		</Grid>

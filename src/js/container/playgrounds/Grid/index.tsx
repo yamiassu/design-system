@@ -1,5 +1,5 @@
 // Packages
-import { Tooltip } from "@lib"
+import { Grid } from "@lib"
 
 // Components
 import Playground from "../../../components/Playground"
@@ -8,11 +8,11 @@ import Playground from "../../../components/Playground"
 import playgroundProps from "./playgroundProps"
 import playGroundDefaultProps from "./defaultProps"
 
-export default function TooltipPlayground() {
+export default function GridPlayground() {
 	return (
 		<Playground
 			minimal
-			component={Tooltip}
+			component={Grid}
 			props={playgroundProps}
 			defaultProps={playGroundDefaultProps}
 		/>

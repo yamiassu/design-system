@@ -10,7 +10,7 @@ export default interface PropsInterface {
 	/**
 	 * The component to be injected props
 	 */
-	component: (props: any) => JSX.Element;
+	component: (props: any) => any;
 
 	/**
 	 * Props descriptors

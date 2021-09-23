@@ -1,7 +1,7 @@
 // Interfaces
 import PlaygroundDescriptor from "../../../../types/playgroundDescriptor"
 
-const buttonPlaygroundProps: Record<string, PlaygroundDescriptor> = {
+const tooltipPlaygroundProps: Record<string, PlaygroundDescriptor> = {
 	children: {
 		type: "text",
 		description: "The content to be rendered inside the button",
@@ -32,4 +32,4 @@ const buttonPlaygroundProps: Record<string, PlaygroundDescriptor> = {
 	},
 }
 
-export default buttonPlaygroundProps
+export default tooltipPlaygroundProps

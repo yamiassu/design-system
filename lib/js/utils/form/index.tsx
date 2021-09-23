@@ -1,6 +1,6 @@
 // Styles
-import { Tooltip, Button } from "../.."
-import { containerCss } from "../../style/form"
+import { Tooltip, Button } from "../../.."
+import { containerCss } from "../../../style/form"
 
 export function filters(value: any, filterslist: ((value: any) => any) | (Array<(value: any) => any>) | undefined): any {
 	let initialvalue = value
@@ -36,13 +36,13 @@ export function validates(value: any, validationlist: ((value: any) => any) | (A
 	return initialvalue
 }
 
-export const wrapUtils = (props: { name: string; label?: string | JSX.Element | JSX.Element[]; tooltip?: any }) => (input: JSX.Element) => {
+export const wrapUtils = (props: { name: string; label?: string | JSX.Element | JSX.Element[]; tooltip?: any; required?: boolean }) => (input: JSX.Element) => {
 	return (
 		<div class={containerCss()}>
 			{
 				props.label &&
 				<label htmlFor={props.name}>
-					{props.label} {props.tooltip && <Tooltip position="bottom-left" maxWidth={200} content={props.tooltip}><Button size="sm" icon>i</Button></Tooltip>}
+					{props.label}{props.required && "*"} {props.tooltip && <Tooltip position="bottom-left" maxWidth={200} content={props.tooltip}><Button color="info" size="sm" icon>i</Button></Tooltip>}
 				</label>
 			}
 			{input}

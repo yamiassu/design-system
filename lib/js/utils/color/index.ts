@@ -1,8 +1,8 @@
 // Types
-import { ColorMapping } from "../../types/utility"
+import { ColorMapping } from "../../../types/utility"
 
 // Theme
-import theme from "../../theme"
+import theme from "../../../theme"
 
 export const getColorable = (cb: ((color: string) => Record<string, string>)) => Object.keys(theme.config.theme.colors).reduce((prev, curr) => ({...prev, [curr]: cb(curr)}), {})
 
