@@ -1,13 +1,14 @@
 {
 	"name": "yamiassu",
-	"version": "0.2.3",
+	"version": "0.2.4",
 	"scripts": {
 		"start": "vite",
-		"build": "tsup lib/index.ts --dts --legacy-output",
+		"build": "tsup lib/index.ts --dts",
 		"serve": "vite preview",
 		"prepublishOnly": "yarn run build"
 	},
-	"module": "./dist/index.js",
+	"main": "./dist/index.js",
+	"module": "./dist/index.mjs",
 	"typings": "./dist/index.d.ts",
 	"dependencies": {
 		"@fortawesome/fontawesome-free": "^5.15.4",
@@ -15,6 +16,12 @@
 		"preact": "^10.5.13",
 		"react-router": "^5.2.1",
 		"react-router-dom": "^5.3.0"
+	},
+	"exports": {
+		".": {
+			"import": "./dist/index.js",
+			"require": "./dist/index.mjs"
+		}
 	},
 	"devDependencies": {
 		"@acai/preset": "^0.2.0-beta.2",
