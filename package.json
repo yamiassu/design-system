@@ -1,6 +1,6 @@
 {
 	"name": "yamiassu",
-	"version": "0.2.1",
+	"version": "0.2.3",
 	"scripts": {
 		"start": "vite",
 		"build": "tsup lib/index.ts --dts --legacy-output",
