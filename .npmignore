@@ -1,0 +1,9 @@
+.vscode
+src
+node_modules
+.eslintrc.js
+.gitignore
+index.html
+tsup.config.ts
+vite.config.ts
+yarn-error.log

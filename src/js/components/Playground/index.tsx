@@ -1,9 +1,10 @@
 // Packages
-import { Grid, Input, Text, Form, Toggle, Select, Title } from "@lib"
 import { createElement } from "preact"
 import { useEffect, useMemo, useState } from "preact/hooks"
+import { Grid, Input, Text, Form, Toggle, Select, Title } from "../../../"
 
 // Component
+import { gridCss } from "./style"
 import PropsInterface from "./props"
 
 export default function Playground(props: PropsInterface) {
@@ -78,7 +79,7 @@ export default function Playground(props: PropsInterface) {
 				</Form>
 			</Grid>
 			<Grid col="8" vertical="fill">
-				<Grid fill horizontal="center" vertical="center" css={{ overflow: "hidden" }}>
+				<Grid fill horizontal="center" vertical="center" className={gridCss()}>
 					{createElement(props.component, componentProps)}
 				</Grid>
 			</Grid>

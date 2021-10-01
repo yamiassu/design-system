@@ -14,23 +14,22 @@
 		"strict": true,
 		"forceConsistentCasingInFileNames": true,
 		"module": "ESNext",
+		"declaration": true,
 		"moduleResolution": "Node",
 		"resolveJsonModule": true,
 		"isolatedModules": true,
-		"noEmit": true,
+		"noEmit": false,
+		"outDir": "dist",
 		"jsx": "preserve",
 		"jsxFactory": "h",
 		"jsxFragmentFactory": "Fragment",
 		"paths": {
 			"@lib": [
 				"./lib"
-			],
-			"@lib/*": [
-				"./lib/*"
 			]
 		}
 	},
 	"include": [
-		"src"
+		"web"
 	]
 }

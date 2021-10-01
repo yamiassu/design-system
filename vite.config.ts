@@ -3,17 +3,20 @@ import { resolve } from "path"
 import { defineConfig } from "vite"
 import preact from "@preact/preset-vite"
 import tsconfigPaths from "vite-tsconfig-paths"
+import packageJson from "./package.json"
+import dts from "vite-dts"
 
 const path = (file) => resolve(__dirname, file)
+const deps = {...packageJson.dependencies,...packageJson.devDependencies}
 
 // https://vitejs.dev/config/
 export default defineConfig({
 	resolve: {
 		alias: {
-			"@lib": path("lib"),
+			"@lib": path("src"),
 		},
 	},
-	plugins: [tsconfigPaths(), preact()],
+	plugins: [tsconfigPaths(), preact(), dts()],
 	build: {
 		lib: {
 			entry: path("src/index.ts"),
@@ -21,9 +24,8 @@ export default defineConfig({
 			fileName: (format) => `index.${format}.js`,
 		},
 		rollupOptions: {
-			external: ["preact"],
+			external: Object.keys(deps),
 			output: {
-				sourcemap: true,
 				globals: {
 					preact: "preact",
 				},

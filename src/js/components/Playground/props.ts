@@ -1,5 +1,5 @@
 // Interfaces
-import type PlaygroundDescriptor from "../../../types/playgroundDescriptor"
+import type PlaygroundDescriptor from "./playgroundDescriptor"
 
 export default interface PropsInterface {
 	/**
