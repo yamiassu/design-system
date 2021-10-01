@@ -1,12 +1,16 @@
 {
-	"name": "@yamiassu/style",
-	"version": "0.0.0",
+	"name": "yamiassu",
+	"version": "0.2.0",
 	"scripts": {
 		"start": "vite",
-		"build": "tsc && vite build",
-		"serve": "vite preview"
+		"build": "tsup lib/index.ts --dts --legacy-output",
+		"serve": "vite preview",
+		"prepublishOnly": "yarn run build"
 	},
+	"module": "./lib/index.ts",
+	"typings": "./lib/index.ts",
 	"dependencies": {
+		"@fortawesome/fontawesome-free": "^5.15.4",
 		"@stitches/react": "^1.1.0",
 		"preact": "^10.5.13",
 		"react-router": "^5.2.1",
@@ -14,12 +18,26 @@
 	},
 	"devDependencies": {
 		"@acai/preset": "^0.2.0-beta.2",
-		"@preact/preset-vite": "^2.0.0",
+		"@preact/preset-vite": "2.1.0",
+		"@rollup/plugin-node-resolve": "^13.0.5",
+		"@rollup/plugin-sucrase": "^4.0.0",
 		"@types/node": "^16.9.1",
 		"@types/react-router-dom": "^5.3.0",
 		"eslint": "^7.32.0",
+		"rollup-plugin-babel": "^4.4.0",
+		"rollup-plugin-banner2": "^1.2.2",
+		"rollup-plugin-commonjs": "^10.1.0",
+		"rollup-plugin-esbuild": "^4.5.0",
+		"rollup-plugin-node-globals": "^1.4.0",
+		"rollup-plugin-node-resolve": "^5.2.0",
+		"rollup-plugin-preact": "^0.5.2",
+		"rollup-plugin-replace": "^2.2.0",
+		"rollup-plugin-ts": "^1.4.7",
+		"rollup-plugin-uglify": "^6.0.4",
+		"tsup": "^5.2.1",
 		"typescript": "^4.3.2",
 		"vite": "^2.5.4",
+		"vite-plugin-dts": "^0.8.2",
 		"vite-tsconfig-paths": "^3.3.14"
 	}
 }
