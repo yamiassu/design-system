@@ -1,14 +1,14 @@
 {
 	"name": "yamiassu",
-	"version": "0.2.0",
+	"version": "0.2.1",
 	"scripts": {
 		"start": "vite",
 		"build": "tsup lib/index.ts --dts --legacy-output",
 		"serve": "vite preview",
 		"prepublishOnly": "yarn run build"
 	},
-	"module": "./lib/index.ts",
-	"typings": "./lib/index.ts",
+	"module": "./dist/index.js",
+	"typings": "./dist/index.d.ts",
 	"dependencies": {
 		"@fortawesome/fontawesome-free": "^5.15.4",
 		"@stitches/react": "^1.1.0",
