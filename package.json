@@ -1,6 +1,6 @@
 {
 	"name": "yamiassu",
-	"version": "0.2.7",
+	"version": "0.2.8",
 	"scripts": {
 		"start": "vite",
 		"build": "tsup-node",
@@ -22,12 +22,16 @@
 	},
 	"exports": {
 		".": {
-			"import": "./dist/index.es.js",
-			"require": "./dist/index.umd.js"
+			"import": "./dist/index.js",
+			"require": "./dist/index.mjs"
 		},
-		"./*": {
-			"import": "./dist/*.es.js",
-			"require": "./dist/*.umd.js"
+		"./form": {
+			"import": "./dist/form.js",
+			"require": "./dist/form.mjs"
+		},
+		"./utils": {
+			"import": "./dist/utils.js",
+			"require": "./dist/utils.mjs"
 		}
 	},
 	"typesVersions": {
