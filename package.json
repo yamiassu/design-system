@@ -1,15 +1,16 @@
 {
 	"name": "yamiassu",
-	"version": "0.2.6",
+	"version": "0.2.7",
 	"scripts": {
 		"start": "vite",
-		"build": "tsup-node src/index.ts --dts --legacy-output",
+		"build": "tsup-node",
 		"serve": "vite preview",
 		"prepublishOnly": "yarn run build"
 	},
 	"files": [
 		"dist"
 	],
+	"types": "./dist/*.d.ts",
 	"main": "./dist/my-lib.umd.js",
 	"module": "./dist/my-lib.es.js",
 	"dependencies": {
@@ -23,6 +24,17 @@
 		".": {
 			"import": "./dist/index.es.js",
 			"require": "./dist/index.umd.js"
+		},
+		"./*": {
+			"import": "./dist/*.es.js",
+			"require": "./dist/*.umd.js"
+		}
+	},
+	"typesVersions": {
+		"*": {
+			"*": [
+				"./dist/*"
+			]
 		}
 	},
 	"devDependencies": {
