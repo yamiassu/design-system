@@ -1,6 +1,6 @@
 {
 	"name": "yamiassu",
-	"version": "0.2.8",
+	"version": "0.2.9",
 	"scripts": {
 		"start": "vite",
 		"build": "tsup-node",
@@ -10,9 +10,6 @@
 	"files": [
 		"dist"
 	],
-	"types": "./dist/*.d.ts",
-	"main": "./dist/my-lib.umd.js",
-	"module": "./dist/my-lib.es.js",
 	"dependencies": {
 		"@fortawesome/fontawesome-free": "^5.15.4",
 		"@stitches/react": "^1.1.0",
@@ -22,16 +19,16 @@
 	},
 	"exports": {
 		".": {
-			"import": "./dist/index.js",
-			"require": "./dist/index.mjs"
+			"import": "./dist/index.mjs",
+			"require": "./dist/index.js"
 		},
 		"./form": {
-			"import": "./dist/form.js",
-			"require": "./dist/form.mjs"
+			"import": "./dist/form.mjs",
+			"require": "./dist/form.js"
 		},
 		"./utils": {
-			"import": "./dist/utils.js",
-			"require": "./dist/utils.mjs"
+			"import": "./dist/utils.mjs",
+			"require": "./dist/utils.js"
 		}
 	},
 	"typesVersions": {
