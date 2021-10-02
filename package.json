@@ -1,6 +1,6 @@
 {
 	"name": "yamiassu",
-	"version": "0.2.9",
+	"version": "0.2.10",
 	"scripts": {
 		"start": "vite",
 		"build": "tsup-node",
@@ -10,6 +10,8 @@
 	"files": [
 		"dist"
 	],
+	"main": "./dist/index.js",
+	"module": "./dist/index.mjs",
 	"dependencies": {
 		"@fortawesome/fontawesome-free": "^5.15.4",
 		"@stitches/react": "^1.1.0",
