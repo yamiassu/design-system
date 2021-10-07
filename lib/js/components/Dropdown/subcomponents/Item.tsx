@@ -11,5 +11,5 @@ export default function DropdownItem(props: ItemProps) {
 	// Render
 	// -------------------------------------------------
 
-	return createElement((props.to ? Link : "div") as any, { ...props, class: itemCss({}) })
+	return createElement((props.to ? Link : "button") as any, { ...props, class: itemCss({}) })
 }

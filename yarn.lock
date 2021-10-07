@@ -59,11 +59,6 @@
     minimatch "^3.0.4"
     strip-json-comments "^3.1.1"
 
-"@fortawesome/fontawesome-free@^5.15.4":
-  version "5.15.4"
-  resolved "https://registry.yarnpkg.com/@fortawesome/fontawesome-free/-/fontawesome-free-5.15.4.tgz#ecda5712b61ac852c760d8b3c79c96adca5554e5"
-  integrity sha512-eYm8vijH/hpzr/6/1CJ/V/Eb1xQFW2nnUKArb3z+yUWv7HTwj6M7SP957oMjfZjAHU6qpoNc2wQvIxBLWYa/Jg==
-
 "@humanwhocodes/config-array@^0.5.0":
   version "0.5.0"
   resolved "https://registry.yarnpkg.com/@humanwhocodes/config-array/-/config-array-0.5.0.tgz#1407967d4c6eecd7388f83acf1eaf4d0c6e58ef9"
@@ -415,11 +410,6 @@ concat-map@0.0.1:
   resolved "https://registry.yarnpkg.com/concat-map/-/concat-map-0.0.1.tgz#d8a96bd77fd68df7793a73036a3ba0d5405d477b"
   integrity sha1-2Klr13/Wjfd5OnMDajug1UBdR3s=
 
-core-js@^3.4.1:
-  version "3.18.1"
-  resolved "https://registry.yarnpkg.com/core-js/-/core-js-3.18.1.tgz#289d4be2ce0085d40fc1244c0b1a54c00454622f"
-  integrity sha512-vJlUi/7YdlCZeL6fXvWNaLUPh/id12WXj3MbkMw5uOyF0PfWPBNOCNbs53YqgrvtujLNlt9JQpruyIKkUZ+PKA==
-
 cross-spawn@^7.0.2, cross-spawn@^7.0.3:
   version "7.0.3"
   resolved "https://registry.yarnpkg.com/cross-spawn/-/cross-spawn-7.0.3.tgz#f73a85b9d5d41d045551c177e2882d4ac85728a6"
@@ -531,13 +521,6 @@ esbuild-openbsd-64@0.13.3:
   version "0.13.3"
   resolved "https://registry.yarnpkg.com/esbuild-openbsd-64/-/esbuild-openbsd-64-0.13.3.tgz#0cb15bd86d20eb19cb548b530f1a533197532cf9"
   integrity sha512-HVpkgpn4BQt4BPDAjTOpeMub6mzNWw6Y3gaLQJrpbO24pws6ZwYkY24OI3/Uo3LDCbH6856MM81JxECt92OWjA==
-
-esbuild-plugin-text-replace@^1.1.3:
-  version "1.1.3"
-  resolved "https://registry.yarnpkg.com/esbuild-plugin-text-replace/-/esbuild-plugin-text-replace-1.1.3.tgz#3bd357b90e921fe56f4b13916302f77f9bc4f651"
-  integrity sha512-UY7nVdyxOXomNL0y+qLMcTV2nlbFP7gse1+RIdL1EvevahkSNcGWAAF6XmSE0k7MLbpS/hsLr1PE6n4PI+h5GA==
-  dependencies:
-    ts-replace-all "^1.0.0"
 
 esbuild-sunos-64@0.13.3:
   version "0.13.3"
@@ -1619,13 +1602,6 @@ ts-interface-checker@^0.1.9:
   resolved "https://registry.yarnpkg.com/ts-interface-checker/-/ts-interface-checker-0.1.13.tgz#784fd3d679722bc103b1b4b8030bcddb5db2a699"
   integrity sha512-Y/arvbn+rrz3JCKl9C4kVNfTfSm2/mEp5FSz5EsZSANGPSlQrpRI5M4PKF+mJnE52jOO90PnPSc3Ur3bTQw0gA==
 
-ts-replace-all@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/ts-replace-all/-/ts-replace-all-1.0.0.tgz#ef28283ccdb4da7d69fb03cf543e09e51711659b"
-  integrity sha512-6uBtdkw3jHXkPtx/e9xB/5vcngMm17CyJYsS2YZeQ+9FdRnt6Ev5g931Sg2p+dxbtMGoCm13m3ax/obicTZIkQ==
-  dependencies:
-    core-js "^3.4.1"
-
 tsconfig-paths@^3.9.0:
   version "3.11.0"
   resolved "https://registry.yarnpkg.com/tsconfig-paths/-/tsconfig-paths-3.11.0.tgz#954c1fe973da6339c78e06b03ce2e48810b65f36"
@@ -1744,18 +1720,6 @@ yallist@^4.0.0:
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/yallist/-/yallist-4.0.0.tgz#9bb92790d9c0effec63be73519e11a35019a3a72"
   integrity sha512-3wdGidZyq5PB084XLES5TpOSRA3wjXAlIWMhum2kRcv/41Sn2emQ0dycQW4uZXLejwKvg6EsvbdlVL+FYEct7A==
-
-yamiassu@^0.2.15:
-  version "0.2.15"
-  resolved "https://registry.yarnpkg.com/yamiassu/-/yamiassu-0.2.15.tgz#65d0303f835e6530b0cddbe619eaa8402daf3cef"
-  integrity sha512-MNs2tCaw+1351+JbT2Xry+nSW9RR865nF+HmssIdhqAj/2B+LJ3Ik8MXL0wPOQ7W+X5Zo8Jt7txwYzU514cJYA==
-  dependencies:
-    "@fortawesome/fontawesome-free" "^5.15.4"
-    "@stitches/react" "^1.1.0"
-    esbuild-plugin-text-replace "^1.1.3"
-    preact "^10.5.13"
-    react-router "^5.2.1"
-    react-router-dom "^5.3.0"
 
 yaml@^1.10.2:
   version "1.10.2"

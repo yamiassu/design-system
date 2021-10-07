@@ -8,4 +8,5 @@ export interface ContainerProps {
 export interface ItemProps {
 	children: any;
 	to?: string;
+	onClick?: () => void;
 }
