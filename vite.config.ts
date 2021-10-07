@@ -1,10 +1,8 @@
 // Packages
 import { resolve } from "path"
 import { defineConfig } from "vite"
-import preact from "@preact/preset-vite"
 import tsconfigPaths from "vite-tsconfig-paths"
 import packageJson from "./package.json"
-import dts from "vite-dts"
 
 const path = (file) => resolve(__dirname, file)
 const deps = {...packageJson.dependencies,...packageJson.devDependencies}
@@ -13,13 +11,33 @@ const deps = {...packageJson.dependencies,...packageJson.devDependencies}
 export default defineConfig({
 	resolve: {
 		alias: {
-			"@lib": path("src"),
+			"@lib": path("lib"),
 		},
 	},
-	plugins: [tsconfigPaths(), preact(), dts()],
+	plugins: [
+		tsconfigPaths(),
+		{
+			name: "preact:config",
+			config() {
+				return {
+					esbuild: {
+						jsxFactory: "h",
+						jsxFragment: "Fragment",
+					},
+					resolve: {
+						alias: {
+							"react-dom/test-utils": "preact/test-utils",
+							"react-dom": "preact/compat",
+							react: "preact/compat",
+						},
+					},
+				}
+			},
+		},
+	],
 	build: {
 		lib: {
-			entry: path("src/index.ts"),
+			entry: path("lib/index.ts"),
 			name: "@yamiassu/layout",
 			fileName: (format) => `index.${format}.js`,
 		},

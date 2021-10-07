@@ -26,10 +26,13 @@
 		"paths": {
 			"@lib": [
 				"./lib"
+			],
+			"@lib/*": [
+				"./lib/*"
 			]
 		}
 	},
 	"include": [
-		"web"
+		"src"
 	]
 }
