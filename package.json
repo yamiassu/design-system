@@ -1,6 +1,6 @@
 {
 	"name": "yamiassu",
-	"version": "0.3.1",
+	"version": "0.3.2",
 	"license": "BSD-3-Clause",
 	"scripts": {
 		"start": "vite",
@@ -18,8 +18,7 @@
 		"preact": "^10.5.13",
 		"react-icons": "^4.3.1",
 		"react-router": "^5.2.1",
-		"react-router-dom": "^5.3.0",
-		"yamiassu": "^0.2.15"
+		"react-router-dom": "^5.3.0"
 	},
 	"exports": {
 		".": {
