@@ -14,7 +14,7 @@ export default function TextDocumentation() {
 	// -------------------------------------------------
 
 	return viewBuilder({
-		name: "Input",
+		name: "Text",
 		playground: <Playground />,
 		description: (
 			<>

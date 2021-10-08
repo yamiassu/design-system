@@ -15,6 +15,10 @@ import DropdownDocumentation from "../../../views/components/Dropdown"
 // Img
 import logoImg from "../../../../img/logo.svg"
 
+// Views
+import Home from "../../../views/general/Home"
+import NotFound from "../../../views/general/NotFound"
+
 export function App() {
 	// -------------------------------------------------
 	// Render
@@ -40,26 +44,32 @@ export function App() {
 					</Dropdown>
 				</Grid>
 				<Switch>
-					<Route path="/components/dropdown">
+					<Route exact path="/">
+						<Home />
+					</Route>
+					<Route exact path="/components/dropdown">
 						<DropdownDocumentation />
 					</Route>
-					<Route path="/components/input">
+					<Route exact path="/components/input">
 						<InputDocumentation />
 					</Route>
-					<Route path="/components/title">
+					<Route exact path="/components/title">
 						<TitleDocumentation />
 					</Route>
-					<Route path="/components/grid">
+					<Route exact path="/components/grid">
 						<GridDocumentation />
 					</Route>
-					<Route path="/components/button">
+					<Route exact path="/components/button">
 						<ButtonDocumentation />
 					</Route>
-					<Route path="/components/tooltip">
+					<Route exact path="/components/tooltip">
 						<TooltipDocumentation />
 					</Route>
-					<Route path="/components/text">
+					<Route exact path="/components/text">
 						<TextDocumentation />
+					</Route>
+					<Route>
+						<NotFound />
 					</Route>
 				</Switch>
 			</BrowserRouter>
