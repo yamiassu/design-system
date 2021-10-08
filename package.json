@@ -1,12 +1,12 @@
 {
 	"name": "yamiassu",
-	"version": "0.3.4",
+	"version": "0.3.5",
 	"license": "BSD-3-Clause",
 	"scripts": {
 		"start": "vite",
 		"build": "tsup",
 		"serve": "vite preview",
-		"prepublishOnly": "yarn run build"
+		"prepublishOnly": "tsup"
 	},
 	"files": [
 		"dist"
