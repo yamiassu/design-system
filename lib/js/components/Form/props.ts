@@ -1,5 +1,5 @@
 export default interface iFormProps {
-	data?: [any, (value : any) => void];
+	data?: Record<string, any>;
 	initialData?: any;
 	file?: boolean;
 	onError? (value : any): void;

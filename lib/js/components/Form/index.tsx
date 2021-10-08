@@ -13,13 +13,12 @@ import Props from "./props"
 
 /** Required parent of any other form component */
 export default function Form(props: Props) {
-
 	// -------------------------------------------------
 	// Properties
 	// -------------------------------------------------
 
 	// states
-	const [form, setForm] = useState<any>(props.initialData || {})
+	const [form, setForm] = useState<any>(props.initialData || props.data || {})
 	const [errors, seterrors] = useState<any>({})
 	const [displayerrors, setdisplayerrors] = useState<any>({})
 
@@ -33,13 +32,8 @@ export default function Form(props: Props) {
 
 	useEffect(() => {
 		const { data } = props
-		if (data !== undefined) setForm(() => data[0])
+		if (data !== undefined) setForm(() => data)
 	}, [props.data])
-
-	useEffect(() => {
-		const { data } = props
-		if (data !== undefined) data[1](() => form)
-	}, [form])
 
 	useEffect(() => {
 		if (props.onChange) props.onChange(form)

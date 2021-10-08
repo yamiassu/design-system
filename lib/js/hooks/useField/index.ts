@@ -25,7 +25,8 @@ export default function useField (props: Props) {
 	const position = context ? (context + "." + props.name):props.name
 
 	// states
-	const [value, setValue] = useState(dig(form, position || ""))
+	console.log(form, position , dig(form || {}, position || ""))
+	const [value, setValue] = useState(dig(form || {}, position || ""))
 
 	// -------------------------------------------------
 	// Effects
