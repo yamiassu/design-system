@@ -1,13 +1,13 @@
 // Packages
 import { h } from "preact"
-import { Text } from "@lib/form"
 import { Playground } from "@lib"
+import { Display } from "@lib"
 
 // Component
 import playgroundProps from "./playgroundProps"
 import playGroundDefaultProps from "./defaultProps"
 
-export default function InputPlayground() {
+export default function DisplayPlayground() {
 	// -------------------------------------------------
 	// Render
 	// -------------------------------------------------
@@ -15,7 +15,7 @@ export default function InputPlayground() {
 	return (
 		<Playground
 			minimal
-			component={Text}
+			component={Display}
 			props={playgroundProps}
 			defaultProps={playGroundDefaultProps}
 		/>

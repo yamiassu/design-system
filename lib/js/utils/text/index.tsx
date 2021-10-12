@@ -1,6 +1,6 @@
 // Packages
 import { h, isValidElement } from "preact"
-import hightlight from "highlight.js"
+import hightlight from "highlight.js/lib/common"
 
 // Components
 import { Grid, Title, Highlight } from "../../.."
@@ -8,8 +8,11 @@ import { Grid, Title, Highlight } from "../../.."
 // Interfaces
 import type { JsonTextType } from "../../../types/text"
 
-export function generateHightlight(text: string, code: "javascript" = "javascript") {
-	return hightlight.highlight(text, { language: code }).value
+export function generateHightlight(text: string, code?: string) {
+	if (code)
+		return hightlight.highlight(text, { language: code }).value
+
+	return hightlight.highlightAuto(text).value
 }
 
 const generateType = (text: JsonTextType) => ({

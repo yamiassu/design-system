@@ -1,9 +1,8 @@
 // Interfaces
 import { PlaygroundDescriptor } from "@lib"
 
-const inputPlaygroundProps: Record<string, PlaygroundDescriptor> = {
+const playgroundProps: Record<string, PlaygroundDescriptor> = {
 	name: {
-		type: "text",
 		required: true,
 		description: "Identifier for the field to be indexed on the form",
 	},
@@ -16,15 +15,12 @@ const inputPlaygroundProps: Record<string, PlaygroundDescriptor> = {
 		description: "Disable user interaction with the form",
 	},
 	label: {
-		type: "text",
 		description: "Label for identifying input intention",
 	},
 	tooltip: {
-		type: "text",
 		description: "Tooltip to followup with more indepth information about the input",
 	},
 	placeholder: {
-		type: "text",
 		description: "Placeholder to be displayed when there is no value present",
 	},
 	color: {
@@ -47,4 +43,4 @@ const inputPlaygroundProps: Record<string, PlaygroundDescriptor> = {
 	},
 }
 
-export default inputPlaygroundProps
+export default playgroundProps

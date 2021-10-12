@@ -3,14 +3,14 @@ import { PlaygroundDescriptor } from "@lib"
 
 const playgroundProps: Record<string, PlaygroundDescriptor> = {
 	children: {
-		type: "unavailable",
+		type: "text",
 		required: true,
-		description: "A list of dropdown elements to be displayed",
+		description: "The content to be rendered inside the button",
 	},
-	inline: {
+	size: {
 		group: "Customization",
-		type: "boolean",
-		description: "Make content fit inside parent space",
+		type: "number",
+		description: "Size based on HTML header tag, the higher the value, the smaller it is",
 	},
 }
 

@@ -25,7 +25,6 @@ export default function useField (props: Props) {
 	const position = context ? (context + "." + props.name):props.name
 
 	// states
-	console.log(form, position , dig(form || {}, position || ""))
 	const [value, setValue] = useState(dig(form || {}, position || ""))
 
 	// -------------------------------------------------
@@ -36,15 +35,15 @@ export default function useField (props: Props) {
 	useEffect(() => {
 		const val = dig(form, position)
 
-		if (val !== undefined && val !== props.value) setValue(val)
+		if (val !== undefined && val !== value) setValue(val)
 	}, [form])
 
 	useEffect(() => {
 		// Compare values
-		if (dig(form, position) == props.value) return
+		if (dig(form, position) == value) return
 
 		// Set it in the context
-		const updatedvalue = filters(props.value, props.filters)
+		const updatedvalue = filters(value, props.filters)
 
 		// Check if validations passes
 		const validation = validates(updatedvalue, props.validates)
@@ -52,7 +51,7 @@ export default function useField (props: Props) {
 
 		// Update values
 		updateForm(updatedvalue, position)
-	}, [props.value])
+	}, [value])
 
 	// -------------------------------------------------
 	// Callbacks

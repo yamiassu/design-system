@@ -3,7 +3,7 @@ import { h } from "preact"
 import { useState, useEffect, useCallback } from "preact/hooks"
 
 // Helpers
-import { dig, omit } from "../../utils/object"
+import { compare, dig, omit } from "../../utils/object"
 
 // Contexts
 import FormContext from "../../contexts/form"
@@ -18,7 +18,7 @@ export default function Form(props: Props) {
 	// -------------------------------------------------
 
 	// states
-	const [form, setForm] = useState<any>(props.initialData || props.data || {})
+	const [form, setForm] = useState({ data: props.initialData || props.data || {} as any, internal: true })
 	const [errors, seterrors] = useState<any>({})
 	const [displayerrors, setdisplayerrors] = useState<any>({})
 
@@ -27,16 +27,11 @@ export default function Form(props: Props) {
 	// -------------------------------------------------
 
 	useEffect(() => {
-		if (props.initialData) setForm(props.initialData)
-	}, [props.initialData])
-
-	useEffect(() => {
-		const { data } = props
-		if (data !== undefined) setForm(() => data)
+		if (props.data && !compare(props.data, form)) setForm({ data: props.data, internal: false })
 	}, [props.data])
 
 	useEffect(() => {
-		if (props.onChange) props.onChange(form)
+		if (props.onChange && form.internal) props.onChange(form.data)
 	}, [form, props.onChange])
 
 	useEffect(() => {
@@ -69,9 +64,9 @@ export default function Form(props: Props) {
 		if (props.file) {
 			value = new FormData()
 
-			for (const field in form) {
-				if (form[field]) {
-					value.append(field, form[field])
+			for (const field in form.data) {
+				if (form.data[field]) {
+					value.append(field, form.data[field])
 				}
 			}
 		}
@@ -79,8 +74,8 @@ export default function Form(props: Props) {
 			value = {}
 
 			for (const field in form) {
-				if (form[field]) {
-					value[field] = form[field]
+				if (form.data[field]) {
+					value[field] = form.data[field]
 				}
 			}
 		}
@@ -91,21 +86,21 @@ export default function Form(props: Props) {
 		// Wait for promise response
 		if (value instanceof Promise) {
 			value.then(response => {
-				if (response === false) setForm({})
+				if (response === false) setForm({ data: {}, internal: true })
 			})
 		}
-		else if (value === false) setForm({})
+		else if (value === false) setForm({ data: {}, internal: true })
 	}, [form, props, errors])
 
 	const updateForm = useCallback((value: any, position = "") => {
 
 		setForm((form: any) => {
 			// Set it in the context
-			let updatedform = { ...form }
+			let updatedform = { ...form.data }
 			updatedform = dig(updatedform, position, value)
 
 			// Update values
-			return updatedform
+			return { data: updatedform, internal: true }
 		})
 	}, [form])
 
@@ -133,7 +128,7 @@ export default function Form(props: Props) {
 
 	return (
 		<FormContext.Provider
-			value={{ form, updateErrors, updateForm, errors: displayerrors }}
+			value={{ form: form.data, updateErrors, updateForm, errors: displayerrors }}
 			children={<form {...htmlprops} encType={(props.file ? "multipart/form-data" : undefined)} onSubmit={onProcessSubmit}>{props.children}</form>}
 		/>
 	)

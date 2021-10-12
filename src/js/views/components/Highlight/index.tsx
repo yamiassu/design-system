@@ -3,18 +3,18 @@ import { h, Fragment } from "preact"
 import { Title } from "@lib"
 
 // Containers
-import Playground from "../../../container/playgrounds/Text"
+import Playground from "../../../container/playgrounds/Highlight"
 
 // Utils
 import viewBuilder from "../../../utils/viewBuilder"
 
-export default function TextDocumentation() {
+export default function HighlightDocumentation() {
 	// -------------------------------------------------
 	// Render
 	// -------------------------------------------------
 
 	return viewBuilder({
-		name: "Text",
+		name: "Highlight",
 		playground: <Playground />,
 		description: (
 			<>

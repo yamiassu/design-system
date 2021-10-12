@@ -36,6 +36,8 @@ export const itemCss = css({
 	marginTop: "$margin",
 	width: "100%",
 	textDecoration: "none",
+	backgroundColor: "transparent",
+	border: "transparent",
 })
 
 // -------------------------------------------------

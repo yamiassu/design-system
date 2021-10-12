@@ -1,4 +1,5 @@
 // Packages
+import React from "react"
 import type { VariantProps } from "@stitches/react"
 
 // Component
@@ -9,6 +10,7 @@ export default interface PropsInterface extends VariantProps<typeof buttonCss> {
 	children: any;
 
 	// optional
+	type?: React.HTMLProps<HTMLButtonElement>["type"];
 	onClick?: () => void;
 	to?: string;
 }

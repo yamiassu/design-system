@@ -1,13 +1,11 @@
 // Interfaces
 import { PlaygroundDescriptor } from "@lib"
 
-const tooltipPlaygroundProps: Record<string, PlaygroundDescriptor> = {
+const playgroundProps: Record<string, PlaygroundDescriptor> = {
 	children: {
-		type: "text",
 		description: "The content to be rendered inside the button",
 	},
 	content: {
-		type: "text",
 		description: "Disables user interaction with user, it's automatically turned on internally if the form asks to (so you don't have to).",
 	},
 	active: {
@@ -32,4 +30,4 @@ const tooltipPlaygroundProps: Record<string, PlaygroundDescriptor> = {
 	},
 }
 
-export default tooltipPlaygroundProps
+export default playgroundProps

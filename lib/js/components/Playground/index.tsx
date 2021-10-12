@@ -3,8 +3,8 @@ import { h, createElement, Fragment } from "preact"
 import { useEffect, useMemo, useState } from "preact/hooks"
 
 // Components
-import { Grid, Text, Title } from "../../.."
-import { Input, Form, Toggle, Select } from "../../../form"
+import { Grid, Title, Display } from "../../.."
+import { Input, Form, Toggle, Select, Text } from "../../../form"
 
 // Component
 import { gridCss } from "./style"
@@ -53,6 +53,12 @@ export default function Playground(props: PropsInterface) {
 					return [<Input required={prop.required} disabled tooltip={prop.description} label={key} name={key} />, prop] as const
 				}
 
+				// text area
+				if (prop.type === "text") {
+					return [<Text required={prop.required} tooltip={prop.description} label={key} name={key} />, prop] as const
+				}
+
+				// default input
 				return [<Input required={prop.required} tooltip={prop.description} label={key} name={key} />, prop] as const
 			})
 			// wrap controller with structure
@@ -64,7 +70,7 @@ export default function Playground(props: PropsInterface) {
 					<>
 						{group && <Title size="4">{group}</Title>}
 						{controller[0]}
-						{props.minimal !== true && <Text p="b-2" size="sm">{controller[1].description}</Text>}
+						{props.minimal !== true && <Display p="b-2" size="sm">{controller[1].description}</Display>}
 					</>
 				)
 			})
@@ -77,7 +83,7 @@ export default function Playground(props: PropsInterface) {
 	return (
 		<Grid direction="row" fill>
 			<Grid col="4" css={{ height: "70vh", overflow: "auto" }}>
-				<Form data={[componentProps, setComponentProps]}>
+				<Form data={componentProps} onChange={setComponentProps}>
 					{controls}
 				</Form>
 			</Grid>

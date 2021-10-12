@@ -1,8 +1,8 @@
-const buttonPlayGroundDefaultProps = {
+const playGroundDefaultProps = {
 	children: "Click me",
 	disabled: false,
 	color: "primary",
 	size: "md",
 }
 
-export default buttonPlayGroundDefaultProps
+export default playGroundDefaultProps

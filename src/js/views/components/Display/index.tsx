@@ -3,23 +3,23 @@ import { h, Fragment } from "preact"
 import { Title } from "@lib"
 
 // Containers
-import Playground from "../../../container/playgrounds/Text"
+import Playground from "../../../container/playgrounds/Display"
 
 // Utils
 import viewBuilder from "../../../utils/viewBuilder"
 
-export default function TextDocumentation() {
+export default function DisplayDocumentation() {
 	// -------------------------------------------------
 	// Render
 	// -------------------------------------------------
 
 	return viewBuilder({
-		name: "Text",
+		name: "Display",
 		playground: <Playground />,
 		description: (
 			<>
 				<p>
-					Grid
+					Display
 				</p>
 
 				<Title size="3">Colors</Title>

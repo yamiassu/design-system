@@ -1,16 +1,8 @@
-const textPlayGroundDefaultProps = {
-	children: [
-		{ type: "title", data: "My cool text" },
-		"It's really cool",
-		{
-			type: "column",
-			config: { direction: "row" },
-			data: [
-				{ type: "column", data: "first column" },
-				{ type: "column", data: "second column" },
-			],
-		},
-	],
+const playGroundDefaultProps = {
+	name: "field",
+	label: "My cool label",
+	tooltip: "Did you know that I'm a label?",
+	placeholder: "Placeholder value",
 }
 
-export default textPlayGroundDefaultProps
+export default playGroundDefaultProps

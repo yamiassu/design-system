@@ -1,16 +1,19 @@
-type code = "javascript";
+type code = "javascript" | "html" | "xml" | "bash" | "css" | "markdown" | "json" | "scss" | "sql" | "typescript" | "yaml" | "plain";
+
+type CommonHighlight = {
+	code?: code;
+	name?: string;
+}
 
 type ChildHighlight = {
 	children: string;
 	data?: never;
-	code?: code;
-}
+} & CommonHighlight
 
 type DataHighlight = {
 	children?: never;
 	data?: string;
-	code?: code;
-}
+} & CommonHighlight
 
 type PropsInterface = DataHighlight | ChildHighlight
 export default PropsInterface

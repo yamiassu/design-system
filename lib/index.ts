@@ -1,6 +1,6 @@
 // Components
 export { default as Grid } from "./js/components/Grid"
-export { default as Text } from "./js/components/Text"
+export { default as Display } from "./js/components/Display"
 export { default as Title } from "./js/components/Title"
 export { default as Theme } from "./js/components/Theme"
 export { default as Button } from "./js/components/Button"

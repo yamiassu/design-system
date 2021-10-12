@@ -29,7 +29,7 @@ export default function Select(props: Props) {
 		// Options passed as children
 		if (props.children) return Children
 			.map(props.children, (child) => child)
-			.filter(child => child.type === "select")
+			.filter(child => child.type === "option")
 			.map(child => ({ value: child.props.value, label: child.props.children }))
 
 		// Options passed as array
@@ -51,13 +51,12 @@ export default function Select(props: Props) {
 	return wrapUtils(props)(
 		<select
 			type="checkbox"
-			value={value}
 			onChange={setValue}
 			name={props.name}
 			class={selectCss(props)}
 			placeholder={props.placeholder}
 		>
-			{options.map(option => (<option key={option.value} value={option.value}>{option.label}</option>))}
+			{options.map(option => (<option selected={value === option.value} key={option.value} value={option.value}>{option.label}</option>))}
 		</select>,
 	)
 }

@@ -1,17 +1,46 @@
 // Interfaces
 import { PlaygroundDescriptor } from "@lib"
 
-const textPlaygroundProps: Record<string, PlaygroundDescriptor> = {
-	children: {
-		type: "text",
+const playgroundProps: Record<string, PlaygroundDescriptor> = {
+	name: {
 		required: true,
-		description: "The content to be rendered inside the button",
+		description: "Identifier for the field to be indexed on the form",
 	},
-	size: {
+	required: {
+		type: "boolean",
+		description: "Is this field required when submitting the form?",
+	},
+	disabled: {
+		type: "boolean",
+		description: "Disable user interaction with the form",
+	},
+	label: {
+		description: "Label for identifying input intention",
+	},
+	tooltip: {
+		description: "Tooltip to followup with more indepth information about the input",
+	},
+	placeholder: {
+		description: "Placeholder to be displayed when there is no value present",
+	},
+	color: {
 		group: "Customization",
-		type: "number",
-		description: "Size based on HTML header tag, the higher the value, the smaller it is",
+		type: "select",
+		options: ["primary", "secondary", "warning", "danger", "success", "light", "dark", "info"],
+		description: "Change text color",
+	},
+	background: {
+		group: "Customization",
+		type: "select",
+		options: ["primary", "secondary", "warning", "danger", "success", "light", "dark", "info", "transparent"],
+		description: "Change background color",
+	},
+	border: {
+		group: "Customization",
+		type: "select",
+		options: ["primary", "secondary", "warning", "danger", "success", "light", "dark", "info", "transparent"],
+		description: "Change border color",
 	},
 }
 
-export default textPlaygroundProps
+export default playgroundProps

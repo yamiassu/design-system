@@ -2,10 +2,16 @@
 import type { VariantProps } from "@stitches/react"
 
 // Component
-import { textCss } from "./style"
+import { inputCss } from "./style"
 
-export default interface PropsInterface extends VariantProps<typeof textCss> {
+export default interface PropsInterface extends VariantProps<typeof inputCss> {
 	// required
-	children?: string | any;
-	data?: string | any;
+	name: string;
+
+	// optional
+	required?: boolean;
+	disabled?: boolean;
+	tooltip?: any;
+	label?: string | JSX.Element | JSX.Element[];
+	placeholder?: string;
 }

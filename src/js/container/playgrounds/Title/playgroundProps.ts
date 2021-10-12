@@ -1,9 +1,8 @@
 // Interfaces
 import { PlaygroundDescriptor } from "@lib"
 
-const titlePlaygroundProps: Record<string, PlaygroundDescriptor> = {
+const playgroundProps: Record<string, PlaygroundDescriptor> = {
 	children: {
-		type: "text",
 		required: true,
 		description: "The content to be rendered inside the button",
 	},
@@ -14,4 +13,4 @@ const titlePlaygroundProps: Record<string, PlaygroundDescriptor> = {
 	},
 }
 
-export default titlePlaygroundProps
+export default playgroundProps

@@ -1,5 +1,5 @@
-const titlePlayGroundDefaultProps = {
+const playGroundDefaultProps = {
 	children: "My cool title",
 }
 
-export default titlePlayGroundDefaultProps
+export default playGroundDefaultProps

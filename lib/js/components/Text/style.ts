@@ -2,26 +2,29 @@
 import { css } from "../../../theme"
 
 // Utils
-import { colors } from "../../utils/color"
-import { textSize } from "../../utils/typography"
-import { padding, margin } from "../../utils/layout"
+import { colors, bgColors, borderColors } from "../../utils/color"
 
-// -------------------------------------------------
-// Component
-// -------------------------------------------------
-
-export const textCss = css({
+export const inputCss = css({
+	// default styling
+	borderRadius: "$radius",
+	border: "$sizes$borderWidth solid transparent",
+	padding: "calc($padding / 2) $padding",
+	backgroundColor: "transparent",
 	marginTop: "$margin",
+	resize: "vertical",
 
 	variants: {
-		size: textSize,
-		p: padding,
-		m: margin,
 		color: colors,
-		inline: { true: { display:"inline-block" } },
+		background: bgColors,
+		border: borderColors,
+		disabled: {
+			true: {
+				opacity: 0.7,
+			},
+		},
 	},
 
 	defaultVariants: {
-		size: "md",
+		border: "primary",
 	},
 })

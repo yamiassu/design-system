@@ -4,7 +4,7 @@ import { Button, Playground } from "@lib"
 
 // Component
 import playgroundProps from "./playgroundProps"
-import buttonPlayGroundDefaultProps from "./defaultProps"
+import playGroundDefaultProps from "./defaultProps"
 
 export default function ButtonPlayground() {
 	// -------------------------------------------------
@@ -16,7 +16,7 @@ export default function ButtonPlayground() {
 			minimal
 			component={Button}
 			props={playgroundProps}
-			defaultProps={buttonPlayGroundDefaultProps}
+			defaultProps={playGroundDefaultProps}
 		/>
 	)
 }

@@ -5,12 +5,14 @@ import { BrowserRouter, Switch, Route } from "react-router-dom"
 
 // Playgrounds
 import GridDocumentation from "../../../views/components/Grid"
-import TextDocumentation from "../../../views/components/Text"
+import DisplayDocumentation from "../../../views/components/Display"
 import TitleDocumentation from "../../../views/components/Title"
 import InputDocumentation from "../../../views/components/Input"
+import TextDocumentation from "../../../views/components/Text"
 import ButtonDocumentation from "../../../views/components/Button"
 import TooltipDocumentation from "../../../views/components/Tooltip"
 import DropdownDocumentation from "../../../views/components/Dropdown"
+import HighlightDocumentation from "../../../views/components/Highlight"
 
 // Img
 import logoImg from "../../../../img/logo.svg"
@@ -37,10 +39,12 @@ export function App() {
 						<Dropdown.Item to="/components/dropdown">Dropdown</Dropdown.Item>
 						<Dropdown.Item to="/components/grid">Grid</Dropdown.Item>
 						<Dropdown.Item to="/components/Title">Title</Dropdown.Item>
-						<Dropdown.Item to="/components/Input">Input</Dropdown.Item>
+						<Dropdown.Item to="/components/input">Input</Dropdown.Item>
+						<Dropdown.Item to="/components/text">Text</Dropdown.Item>
 						<Dropdown.Item to="/components/button">Button</Dropdown.Item>
 						<Dropdown.Item to="/components/tooltip">Tooltip</Dropdown.Item>
-						<Dropdown.Item to="/components/text">Text</Dropdown.Item>
+						<Dropdown.Item to="/components/display">Display</Dropdown.Item>
+						<Dropdown.Item to="/components/highlight">Highlight</Dropdown.Item>
 					</Dropdown>
 				</Grid>
 				<Switch>
@@ -52,6 +56,9 @@ export function App() {
 					</Route>
 					<Route exact path="/components/input">
 						<InputDocumentation />
+					</Route>
+					<Route exact path="/components/text">
+						<TextDocumentation />
 					</Route>
 					<Route exact path="/components/title">
 						<TitleDocumentation />
@@ -65,8 +72,11 @@ export function App() {
 					<Route exact path="/components/tooltip">
 						<TooltipDocumentation />
 					</Route>
-					<Route exact path="/components/text">
-						<TextDocumentation />
+					<Route exact path="/components/display">
+						<DisplayDocumentation />
+					</Route>
+					<Route exact path="/components/highlight">
+						<HighlightDocumentation />
 					</Route>
 					<Route>
 						<NotFound />

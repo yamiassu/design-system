@@ -1,7 +1,7 @@
 import { h, Fragment } from "preact"
 import { Dropdown } from "@lib"
 
-const dropdownPlayGroundDefaultProps = {
+const playGroundDefaultProps = {
 	label: "Dropdown container",
 	children: (
 		<>
@@ -12,4 +12,4 @@ const dropdownPlayGroundDefaultProps = {
 	),
 }
 
-export default dropdownPlayGroundDefaultProps
+export default playGroundDefaultProps

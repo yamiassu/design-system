@@ -1,19 +1,17 @@
 // Interfaces
 import { PlaygroundDescriptor } from "@lib"
 
-const gridPlaygroundProps: Record<string, PlaygroundDescriptor> = {
+const playgroundProps: Record<string, PlaygroundDescriptor> = {
 	children: {
 		type: "unavailable",
 		description: "The content to be rendered inside the button",
 	},
 	m: {
 		group: "Spacing",
-		type: "text",
 		description: "Margin properties. Ex: t-2, 5, x-3",
 	},
 	p: {
 		group: "Spacing",
-		type: "text",
 		description: "Padding properties",
 	},
 	fill: {
@@ -68,4 +66,4 @@ const gridPlaygroundProps: Record<string, PlaygroundDescriptor> = {
 	},
 }
 
-export default gridPlaygroundProps
+export default playgroundProps
