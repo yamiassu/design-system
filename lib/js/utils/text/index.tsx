@@ -29,7 +29,7 @@ const generateType = (text: JsonTextType) => ({
 	"text": () => text.data,
 	"span": () => <span {...text.props} style={text.style}>{text.data}</span>,
 	"title": () => <Title {...text.props}>{text.data}</Title>,
-	"highlight": () => <Highlight />,
+	"highlight": () => <Highlight {...text.props} data={text.data} />,
 	"column": () => <Grid {...text.props}>{typeof text.data === "string" ? text.data : generateText(text.data)}</Grid>,
 })[text.type || "text"]()
 
