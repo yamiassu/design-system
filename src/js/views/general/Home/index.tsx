@@ -1,16 +1,8 @@
 // Packages
 import { h } from "preact"
-import { Grid, Title } from "@lib"
-import { useState } from "preact/hooks"
-import { Form, Input, Select } from "@lib/form"
+import { Display, Grid, Title } from "@lib"
 
 export default function Home() {
-	// -------------------------------------------------
-	// Properties
-	// -------------------------------------------------
-
-	const [form, setform] = useState({})
-
 	// -------------------------------------------------
 	// Render
 	// -------------------------------------------------
@@ -19,17 +11,22 @@ export default function Home() {
 		<Grid container>
 			<Title>Yamiassu's design system</Title>
 
-			<Form data={form} onChange={setform}>
-				<Input name="hi" />
-				<Select name="what">
-					<option value="1">Test</option>
-					<option value="2">Test 2</option>
-				</Select>
-			</Form>
-
-			<button onClick={() => setform({ ...form, hi: "what" })}>Test</button>
-
-			<pre>{JSON.stringify(form, null, 4)}</pre>
+			<Display data={{
+				type: "paragraph",
+				data: [
+					"This line contains a",
+					{
+						type: "span",
+						style: { fontWeight: "bold" },
+						data: "bold text",
+					},
+					"and a ",
+					{
+						type: "span",
+						style: { fontStyle: "italic" },
+						data: "italic text",
+					},
+				]}} />
 		</Grid>
 	)
 }

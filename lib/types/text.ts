@@ -1,5 +1,6 @@
 export interface JsonTextType {
 	type?: "text" | "title" | "column";
-	config?: Record<string, any>;
+	props?: Record<string, any>;
+	style?: JSX.HTMLAttributes["style"];
 	data: string;
 }

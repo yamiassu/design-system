@@ -8,6 +8,15 @@ import { Grid, Title, Highlight } from "../../.."
 // Interfaces
 import type { JsonTextType } from "../../../types/text"
 
+/**
+ * ### Generate highlight
+ *
+ * Uses highlight.js to transform your raw code into a parseable one
+ *
+ * @param text Text to transform into highlight
+ * @param code Code language
+ * @returns html raw string
+ */
 export function generateHightlight(text: string, code?: string) {
 	if (code)
 		return hightlight.highlight(text, { language: code }).value
@@ -16,10 +25,12 @@ export function generateHightlight(text: string, code?: string) {
 }
 
 const generateType = (text: JsonTextType) => ({
-	"text": () => <p>{text.data}</p>,
-	"title": () => <Title {...text.config}>{text.data}</Title>,
+	"paragraph": () => Array.isArray(text.data) ? text.data.map(i => generateText(i, "p")).reduce((prev: any, curr) => [...prev, " ", curr], []) : generateText(text.data, "p"),
+	"text": () => text.data,
+	"span": () => <span {...text.props} style={text.style}>{text.data}</span>,
+	"title": () => <Title {...text.props}>{text.data}</Title>,
 	"highlight": () => <Highlight />,
-	"column": () => <Grid {...text.config}>{typeof text.data === "string" ? text.data : generateText(text.data)}</Grid>,
+	"column": () => <Grid {...text.props}>{typeof text.data === "string" ? text.data : generateText(text.data)}</Grid>,
 })[text.type || "text"]()
 
 /**
@@ -30,9 +41,9 @@ const generateType = (text: JsonTextType) => ({
  * @param text
  * @returns
  */
-export function generateText(text: string | JsonTextType | JsonTextType[]): JSX.Element | JSX.Element[] {
+export function generateText(text: string | JsonTextType | JsonTextType[], wrap?: JSX.Element | string): JSX.Element | JSX.Element[] | string {
 	// Pure text
-	if (typeof text === "string") return <p>{text}</p>
+	if (typeof text === "string") return text
 
 	// single element
 	if (!Array.isArray(text)) {
@@ -44,5 +55,8 @@ export function generateText(text: string | JsonTextType | JsonTextType[]): JSX.
 	}
 
 	// group
-	return text.map(generateText) as any
+	if (wrap)
+		return h(wrap as any, {children: text.map(i => generateText(i, wrap || "p"))}) as any
+
+	return text.map(i => generateText(i, wrap || "p")) as any
 }
