@@ -1,9 +1,10 @@
 // Components
 export { default as Grid } from "./js/components/Grid"
-export { default as Display } from "./js/components/Display"
+export { default as Tabs } from "./js/components/Tabs"
 export { default as Title } from "./js/components/Title"
 export { default as Theme } from "./js/components/Theme"
 export { default as Button } from "./js/components/Button"
+export { default as Display } from "./js/components/Display"
 export { default as Tooltip } from "./js/components/Tooltip"
 export { default as Dropdown } from "./js/components/Dropdown"
 export { default as Highlight } from "./js/components/Highlight"

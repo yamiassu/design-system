@@ -60,7 +60,7 @@ export const perColumn = (cb: ((index: number, total: number) => Record<string, 
  * @param {Function} cb Callback to define variant object
  * @returns Row for insert into variant
  */
-export const perDirection = (cb: ((directions: string[], index: number) => Record<string, string | number>)) => Object
+export const perDirection = (cb: ((directions: string[], index: number) => Record<string, any>)) => Object
 	.keys(directions)
 	.map(key => [key, (directions as any)[key]] as const)
 	.reduce((prev, curr) =>

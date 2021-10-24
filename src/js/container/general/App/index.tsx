@@ -5,11 +5,12 @@ import { BrowserRouter, Switch, Route } from "react-router-dom"
 
 // Playgrounds
 import GridDocumentation from "../../../views/components/Grid"
-import DisplayDocumentation from "../../../views/components/Display"
+import TabsDocumentation from "../../../views/components/Tabs"
+import TextDocumentation from "../../../views/components/Text"
 import TitleDocumentation from "../../../views/components/Title"
 import InputDocumentation from "../../../views/components/Input"
-import TextDocumentation from "../../../views/components/Text"
 import ButtonDocumentation from "../../../views/components/Button"
+import DisplayDocumentation from "../../../views/components/Display"
 import TooltipDocumentation from "../../../views/components/Tooltip"
 import DropdownDocumentation from "../../../views/components/Dropdown"
 import HighlightDocumentation from "../../../views/components/Highlight"
@@ -45,6 +46,7 @@ export function App() {
 						<Dropdown.Item to="/components/tooltip">Tooltip</Dropdown.Item>
 						<Dropdown.Item to="/components/display">Display</Dropdown.Item>
 						<Dropdown.Item to="/components/highlight">Highlight</Dropdown.Item>
+						<Dropdown.Item to="/components/tabs">Tabs</Dropdown.Item>
 					</Dropdown>
 				</Grid>
 				<Switch>
@@ -77,6 +79,9 @@ export function App() {
 					</Route>
 					<Route exact path="/components/highlight">
 						<HighlightDocumentation />
+					</Route>
+					<Route exact path="/components/tabs">
+						<TabsDocumentation />
 					</Route>
 					<Route>
 						<NotFound />
